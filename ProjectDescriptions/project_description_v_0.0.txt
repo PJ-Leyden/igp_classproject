@@ -1,0 +1,22 @@
+Title: 			Project Description v_0.0
+Authors: 		Paul "PJ" Leyden
+				David Carlyn
+Project Title: 	Tower Defender (WIP)
+
+Description: 
+	The aim of the game will be to create a 2D (possibly orthographic) tower defense game 
+in which a teraain is generated and the player is given a castle and road to place down. After 
+placing the castle and road going to it from the edge of the map they will be given funds to 
+place towers. They may then place towers and initiate the first round. This wilol continue 
+until the player loses or quits.
+
+Initial 2 Weeks:
+PJ: 
+	1)I will set up scene of simple grid, system along with basic title prefabs that can fit into 
+		this grid. 
+
+David:
+
+All:
+	1) Sit down for discussion on exact process to follow and exact desired outcome of game. 
+
