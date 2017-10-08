@@ -1,0 +1,12 @@
+Title:		goals0
+Author:		David Carlyn
+			Paul "PJ" Leyden
+
+Goals:
+	1) Random generated terrain tiles.
+	2) Customize position of castle and track
+	3) Customize position of towers
+	4) Have different waves of enemies
+	5) Keep score
+	6) Decent menu system
+	
