@@ -22,5 +22,3 @@ Goals For 1st Iteration:
 	Paul "PJ":
 		Customize position of castle and track
 		Customize position of towers
-		
-	
