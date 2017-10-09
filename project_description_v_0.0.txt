@@ -19,8 +19,7 @@ enemies with more functionality.
 
 Initial 2 Weeks:
 PJ: 
-	1)I will set up scene of simple grid, system along with basic title prefabs that can fit into 
-		this grid. 
+	1) I will set up scene of simple grid system
 
 David:
 	1) I will create an inital set of enemy and tower prefabs

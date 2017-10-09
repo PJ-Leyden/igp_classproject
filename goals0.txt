@@ -20,5 +20,7 @@ Goals For 1st Iteration:
 		Decent Menu System
 		Keep Score	
 	Paul "PJ":
+		Customize position of castle and track
+		Customize position of towers
 		
 	
