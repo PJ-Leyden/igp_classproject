@@ -16,6 +16,7 @@ PJ:
 		this grid. 
 
 David:
+	1)I will begin creating assets for our towers and enemys.
 
 All:
 	1) Sit down for discussion on exact process to follow and exact desired outcome of game. 
