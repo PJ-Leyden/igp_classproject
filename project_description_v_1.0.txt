@@ -24,5 +24,6 @@ PJ:
 	3) Begin random generation of tile grid
 
 David:
-	1) I will create an inital set of enemy and tower prefabs
+	1) I will set up a Game Over Scenario
+	2) I will set up a Winning Scenario
 	 
