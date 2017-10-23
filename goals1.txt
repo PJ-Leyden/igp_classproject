@@ -7,13 +7,14 @@ Goals:
 	2) Customize position of castle and track
 	3) Customize position of towers
 	4) Have different waves of enemies
-	5) Keep score (Completed)
-	6) Decent menu system (Completed)
+	5) Keep score (Completed David)
+	6) Decent menu system (Completed David)
 	7) Set up Navigation for enemies (AI)
 	8) Set up a Game Over scenario
 	9) Set up a Level Complete scenario
 	10) Create Enemy Wave System
 	11) Create Enemy Health Systems
+	12) Create a board (Completed PJ)
 	
 Goals For 2nd Iteration:
 	David:
