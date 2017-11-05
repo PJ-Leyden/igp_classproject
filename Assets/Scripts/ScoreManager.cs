@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ScoreManager : MonoBehaviour {
+public class ScoreManager : MonoBehaviour
+{
 
 	//Total Score of the game
 	public static int score;
 	public Text scoreText;
-	
+
+
 	//Add to the score
 	public void AddScore(int points)
 	{
