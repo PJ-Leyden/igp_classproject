@@ -11,6 +11,11 @@ public class ScoreManager : MonoBehaviour
 	public static int score;
 	public Text scoreText;
 
+	private void Start()
+	{
+		UpdateScoreText();
+	}
+
 
 	//Add to the score
 	public void AddScore(int points)
