@@ -9,6 +9,10 @@ TagManager:
   - EdgeTiles
   - InnerTiles
   - Board
+  - Lake Tile
+  - Mountain Tile
+  - Grass Tile
+  - Forest Tile
   layers:
   - Default
   - TransparentFX
