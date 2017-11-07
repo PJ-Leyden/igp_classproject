@@ -1186,14 +1186,14 @@ MonoBehaviour:
   columns: 7
   rows: 7
   forestCount:
-    minimum: 5
-    maximum: 7
+    minimum: 9
+    maximum: 12
   lakeCount:
-    minimum: 1
-    maximum: 3
+    minimum: 3
+    maximum: 5
   mountainCount:
-    minimum: 1
-    maximum: 3
+    minimum: 2
+    maximum: 4
   grass_tiles:
   - {fileID: 1596105353513848, guid: 18ec36c0d3a39414a870d0f9c9aeadef, type: 2}
   lake_tiles:
