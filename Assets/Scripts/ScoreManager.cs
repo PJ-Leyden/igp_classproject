@@ -6,13 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+	public static ScoreManager instance = null;
 
 	//Total Score of the game
-	public static int score;
+	public int score;
 	public Text scoreText;
 
 	private void Start()
 	{
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);
+
 		UpdateScoreText();
 	}
 

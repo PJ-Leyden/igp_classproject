@@ -13,6 +13,7 @@ TagManager:
   - Mountain Tile
   - Grass Tile
   - Forest Tile
+  - Enemy
   layers:
   - Default
   - TransparentFX
