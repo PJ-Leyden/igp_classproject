@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour {
 		level = 1;
 
 		//Reset Score
-		ScoreManager.score = 0;
+		ScoreManager.instance.score = 0;
 
 		//Load Main Menu
 		SceneManager.LoadScene("main_menu");
