@@ -14,6 +14,8 @@ TagManager:
   - Grass Tile
   - Forest Tile
   - Enemy
+  - StraightPathTile
+  - CornerPathTile
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - 
   - 
   - Grid
-  - 
+  - Game
   - 
   - 
   - 

@@ -9,34 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1042392394950962}
+  m_RootGameObject: {fileID: 1555878558868684}
   m_IsPrefabParent: 1
---- !u!1 &1042392394950962
+--- !u!1 &1555878558868684
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4619983150671656}
-  - component: {fileID: 212033694741452194}
-  - component: {fileID: 61395940526846904}
-  - component: {fileID: 50196971298381102}
-  - component: {fileID: 114663404099446978}
-  - component: {fileID: 114035495505390004}
-  m_Layer: 9
-  m_Name: Enemy
-  m_TagString: Enemy
+  - component: {fileID: 4634054789819170}
+  - component: {fileID: 212052343245847916}
+  - component: {fileID: 61139401120291816}
+  m_Layer: 8
+  m_Name: Straight_Path_Tile
+  m_TagString: StraightPathTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4619983150671656
+--- !u!4 &4634054789819170
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
+  m_GameObject: {fileID: 1555878558868684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -44,32 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50196971298381102
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &61395940526846904
+--- !u!61 &61139401120291816
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
+  m_GameObject: {fileID: 1555878558868684}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -85,47 +62,16 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &114035495505390004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1752572d96b5284fac8e67ba6f0b9e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  speed: 0.05
-  straightPathTag: StraightPathTile
-  cornerPathTag: CornerPathTile
---- !u!114 &114663404099446978
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d95785b6905f3448957acecf6543e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  damageTaken: 20
-  pointsPerKill: 20
---- !u!212 &212033694741452194
+--- !u!212 &212052343245847916
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042392394950962}
+  m_GameObject: {fileID: 1555878558868684}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -151,8 +97,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300016, guid: cb23c4f09cc54a24380be3d40cffbee2, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300018, guid: cb23c4f09cc54a24380be3d40cffbee2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
