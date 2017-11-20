@@ -1,4 +1,4 @@
-Title: 			Project Description v_2.0
+Title: 			Project Description v_3.0
 Authors: 		Paul "PJ" Leyden
 			David Carlyn
 Project Title: 	Tower Defender (WIP)
@@ -19,9 +19,9 @@ enemies with more functionality.
 
 Phase 2 - Weeks 3,4:
 PJ: 
-	1) Restructure grid. Was incorrect. My bad. 
-	2) Correct Prefab creation
-	3) Complete random generation of tile grid
+	1) Finish Prefabs (Not much)
+	2) Write GameManager
+	3) Customize position of track, towers and castle.
 
 David:
 	1) I will create the tower script

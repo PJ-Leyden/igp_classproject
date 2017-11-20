@@ -1,4 +1,4 @@
-Title:		goals2
+Title:		goals3
 Author:		David Carlyn
 		Paul "PJ" Leyden
 
@@ -15,16 +15,17 @@ Goals:
 	10) Create Enemy Wave System (Completed)
 	11) Create Enemy Health Systems (Completed)
 	12) Create a board (Completed)
-  13) Restructure game board. Everything should be sprites. Not planes. My bad. (Completed)
+  	13) Restructure game board. Everything should be sprites. Not planes. My bad. (Completed)
 	14) Create Correct Prefabs for tile types. (Completed)
 	15) Auto-generate board. (Completed)
-  16) Create tower Scripts.
+  	16) Create tower Scripts.
 	
 Goals For 3rd Iteration:
 	David:
 		Have Different Waves of Enemies
-    Create Tower Scripts
+    		Create Tower Scripts
 	Paul "PJ":
-		Restructure game board. Everything should be sprites. Not planes. My bad.
-		Create Correct Prefabs for tile types
-		Auto-generate board. (Possible seeded???) 
+		Finish Prefabs (Not much)
+		Write GameManager
+		Customize position of track, towers and castle.
+		 
