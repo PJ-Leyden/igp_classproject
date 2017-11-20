@@ -24,6 +24,6 @@ PJ:
 	3) Complete random generation of tile grid
 
 David:
-	1) I will create an enemy wave system
-	2) I will create an enemy health system
+	1) I will create the tower script
+	2) I will create different enemy waves
 	 
