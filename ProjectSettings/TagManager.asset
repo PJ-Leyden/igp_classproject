@@ -17,6 +17,7 @@ TagManager:
   - HighTower
   - Castle
   - Tower
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Placed
     uniqueID: 849190141
+    locked: 0
+  - name: Enemy
+    uniqueID: 1230568859
     locked: 0
