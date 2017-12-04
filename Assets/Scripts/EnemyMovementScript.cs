@@ -66,7 +66,7 @@ public class EnemyMovementScript : MonoBehaviour {
 			tempTile = GetTile(nextPosition + Vector2.down);
 		//Check Left
 		if (tempTile == null || tempTile == prevTile)
-			nextTile = GetTile(nextPosition + Vector2.left);
+			tempTile = GetTile(nextPosition + Vector2.left);
 
 		//isDone
 		if (tempTile == null || tempTile == prevTile)
