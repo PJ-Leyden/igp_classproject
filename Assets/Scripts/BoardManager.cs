@@ -27,6 +27,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject[] mountain_tiles;
 	public GameObject[] forest_tiles;
 
+	private GameObject board;
 	private Transform boardHolder;
 	private List <Vector3> gridPositions = new List<Vector3>();
 
@@ -40,7 +41,9 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	void BoardSetup() {
-		boardHolder = new GameObject("Board").transform;
+		board = new GameObject("Board");
+		boardHolder = board.transform;
+		board.tag = "Board";
 	}
 
 	Vector3 RandomPosition() {

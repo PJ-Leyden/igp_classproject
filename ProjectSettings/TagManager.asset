@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tile
-  - CornerTiles
-  - EdgeTiles
-  - InnerTiles
   - Board
   - Lake Tile
   - Mountain Tile
@@ -16,6 +13,8 @@ TagManager:
   - Enemy
   - StraightPathTile
   - CornerPathTile
+  - LowTower
+  - HighTower
   layers:
   - Default
   - TransparentFX

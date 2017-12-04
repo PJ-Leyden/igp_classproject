@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager_test : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
 	private BoardManager boardScript;
+	private PieceManager pieceManager;
 
 
 	private int level = 1;
@@ -12,11 +13,17 @@ public class GameManager_test : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		boardScript = GetComponent<BoardManager>();
+		pieceManager = GetComponent<PieceManager>();
 		InitGame();
+		PlacePieces();
 	}
 
 	void InitGame() {
 		boardScript.SetupScene(level);
+	}
+
+	void PlacePieces() {
+		pieceManager.PlacePieces(true);
 	}
 	
 	// Update is called once per frame
