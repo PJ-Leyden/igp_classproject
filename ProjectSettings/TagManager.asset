@@ -16,6 +16,7 @@ TagManager:
   - Enemy
   - StraightPathTile
   - CornerPathTile
+  - Tower
   layers:
   - Default
   - TransparentFX
