@@ -23,10 +23,12 @@ public class PieceManager : MonoBehaviour {
 	public void PlacePieces(bool active) {
 		placable = active;
 		if(placable){
-			GameObject board = FindGameObjectWithTag("Board");
-			for(int i = 0; i < board.transform.childCount(); i++){
-				TileManager tileManager = board.transform.GetChild(i).gameObject.GetComponent<TileManager>();
-				tileManager.clickable = active;
+			GameObject board = GameObject.FindGameObjectWithTag("Board");
+			for(int i = 0; i < board.transform.childCount; i++){
+				if(!board.transform.GetChild(i).gameObject.CompareTag("Lake Tile") && !board.transform.GetChild(i).gameObject.CompareTag("Mountain Tile")){
+					TileManager tileManager = board.transform.GetChild(i).gameObject.GetComponent<TileManager>();
+					tileManager.clickable = active;
+				}
 			}
 		}
 	}

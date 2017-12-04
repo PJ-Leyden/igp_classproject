@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4932287844376702}
   - component: {fileID: 212057010897061262}
   - component: {fileID: 61885017596557988}
+  - component: {fileID: 114040192198510584}
   m_Layer: 8
   m_Name: Lake_Tile
   m_TagString: Lake Tile
@@ -66,6 +67,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &114040192198510584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1260177174372034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb6b78ac46dea44e9ec58f39fb498c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickable: 0
+  type: 0
+  pTiles:
+  - {fileID: 1255118469361518, guid: 0c232817a243c9e49802d42d27b4d6d8, type: 2}
+  - {fileID: 1602809413778882, guid: ae177eda6a1c64d4e9c28b14d1ae9f3a, type: 2}
+  - {fileID: 1790770275885506, guid: 7c93f2279685bcc4d8d3654d1f0f5e4c, type: 2}
 --- !u!212 &212057010897061262
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,8 +113,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -830192113
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: cb23c4f09cc54a24380be3d40cffbee2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -15,6 +15,7 @@ TagManager:
   - CornerPathTile
   - LowTower
   - HighTower
+  - Castle
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3464775183
+    locked: 0
+  - name: Placed
+    uniqueID: 849190141
     locked: 0
