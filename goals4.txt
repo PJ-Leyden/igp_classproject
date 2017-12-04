@@ -3,10 +3,10 @@ Author:		David Carlyn
 		Paul "PJ" Leyden
 
 Goals:
-	1) Random generated terrain tiles.
+	1) Random generated terrain tiles. (Completed)
 	2) Customize position of castle and track
 	3) Customize position of towers
-	4) Have different waves of enemies
+	4) Have different waves of enemies (Partial)
 	5) Keep score (Completed)
 	6) Decent menu system (Completed)
 	7) Set up Navigation for enemies AI (Completed)
@@ -18,13 +18,17 @@ Goals:
   	13) Restructure game board. Everything should be sprites. Not planes. My bad. (Completed)
 	14) Create Correct Prefabs for tile types. (Completed)
 	15) Auto-generate board. (Completed)
-  	16) Create tower Scripts.
+  	16) Create tower Scripts. (Completed)
+	17) Create Bullet Script. (Completed)
+	18) Put Everything together. 
 	
 Goals For 3rd Iteration:
 	David:
-		Have Different Waves of Enemies
-    		Create Tower Scripts
+		Put Everything together.
+		Enhance Enemy waves.
+		Finish Bullet Script.
 	Paul "PJ":
+		Put Everything together.
 		Set Up UI system for placing certain objects. 
 		Simulation of Enemies
 		 
