@@ -18,11 +18,12 @@ before the end of the semester then we will add more aspects such a story line, 
 enemies with more functionality.
 
 Cuurent Phase:
-PJ: 
-	1) Set Up UI system for placing certain objects. 
-	2) Simulation of Enemies
-
 David:
-	1) I will create the tower script
-	2) I will create different enemy waves
+		Put Everything together.
+		Enhance Enemy waves.
+		Finish Bullet Script.
+Paul "PJ":
+		Put Everything together.
+		Set Up UI system for placing certain objects. 
+		Simulation of Enemies
 	 
