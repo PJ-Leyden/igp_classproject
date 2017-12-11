@@ -25,8 +25,11 @@ public class Tower : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		Rotate();
-		ShootControl();
+		if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+		{
+			Rotate();
+			ShootControl();
+		}
 	}
 
 	private void Rotate()
