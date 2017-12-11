@@ -18,6 +18,8 @@ TagManager:
   - Castle
   - Tower
   - Bullet
+  - Game Manager
+  - Start Tile
   layers:
   - Default
   - TransparentFX

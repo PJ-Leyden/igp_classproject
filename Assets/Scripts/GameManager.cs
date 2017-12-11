@@ -7,8 +7,13 @@ public class GameManager : MonoBehaviour {
 	private BoardManager boardScript;
 	private PieceManager pieceManager;
 
-
 	private int level = 1;
+
+	public int numEnemies = 10;
+
+	GameObject startTile;
+	public GameObject enemy;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -23,11 +28,24 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void PlacePieces() {
-		pieceManager.PlacePieces(true);
+		pieceManager.PlacePieces(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void beginGame(){
+		startTile = GameObject.FindGameObjectWithTag("Start Tile");
+		InvokeRepeating("spawnEnemy", 1, 5f);
+	}
+
+	public void spawnEnemy(){
+		Instantiate(enemy, startTile.transform.position, Quaternion.identity);
+		--numEnemies;
+		if(numEnemies < 1){
+			CancelInvoke();
+		}
 	}
 }

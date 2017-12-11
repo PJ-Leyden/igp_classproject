@@ -10,6 +10,7 @@ public class EnemyMovementScript : MonoBehaviour {
 	Collider2D nextTile;
 	public string straightPathTag = "";
 	public string cornerPathTag = "";
+	public string castleTag = "";
 
 	bool isMoving;
 	bool isDone;
@@ -86,7 +87,7 @@ public class EnemyMovementScript : MonoBehaviour {
 
 		//Set to null if not a path tile
 		if (tempTile != null)
-			if (!tempTile.CompareTag(straightPathTag) && !tempTile.CompareTag(cornerPathTag))
+			if (!tempTile.CompareTag(straightPathTag) && !tempTile.CompareTag(cornerPathTag) && !tempTile.CompareTag(castleTag))
 				tempTile = null;
 
 
