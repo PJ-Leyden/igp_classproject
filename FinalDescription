@@ -1,0 +1,33 @@
+Project Description
+By: David Carlyn & Paul “PJ” Leyden
+
+Tower Defender
+
+Description:
+	The game is a 2D tower defense game in which a terrain is generated and the player is given a castle and road to place down. After placing the castle and road going to it from the edge of the map, they will be given funds to place towers. They may then place towers and initiate the first round. This will continue until the player loses or quits.
+	The game will have enemies and two different towers. The enemy's goal is to simply get to the castle, while the player’s goal is to set up the path and tower in such a way that no enemy will reach the castle.
+
+Goals:
+
+Random generated terrain (Leyden)
+Customize position of castle and track (Leyden)
+Customize position of towers (Leyden)
+Have different waves of enemies (Carlyn)
+Keep score / score manager (Carlyn)
+Menu System (Carlyn)
+Navigation for enemy AI (Carlyn)
+Game over scenario (Carlyn)
+Level complete scenario (Carlyn)
+Create enemy wave system (Carlyn)
+Create enemy health system (Carlyn)
+Construct a board (Leyden)
+Reconstruct the board (Leyden)
+Create correct prefabs for tile types (Leyden)
+Auto-generate board (Leyden)
+Create tower script (Carlyn)
+Create bullet script (Carlyn)
+Set up UI system for placing objects (Leyden)
+Simulation of enemies (Leyden)
+Put everything together (Leyden & Carlyn)
+
+Every goal was completed in this project!
