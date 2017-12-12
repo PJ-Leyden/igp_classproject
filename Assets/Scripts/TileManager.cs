@@ -7,6 +7,7 @@ public class TileManager : MonoBehaviour {
 	public bool clickable = false;
 	public int type = 0;
 	public GameObject[] pTiles;
+	public LayerMask blockingLayer;
 	GameObject tile;
 
 	GameObject gm;
@@ -27,45 +28,110 @@ public class TileManager : MonoBehaviour {
 
 	void OnMouseDown(){
 		if(clickable){
-			switch(type){
-				case 0://castle
-					if(pm.numCastle > 0){
-						tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
-						pm.numCastle--;
-					}
-					break;
 
-				case 1://tower low
-					if(pm.numTower1 > 0){
-						tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
-						pm.numTower1--;
-					}
-					break;
+			//here
+			int isJunction = 0;
+			Collider2D temp;
 
-				case 2://tower high
-					if(pm.numTower2 > 0){
-						tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
-						pm.numTower2--;
+			if(type == 3 || type == 4){
+				//Check Top
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
 					}
-					break;
-
-				case 3://path
-					if(pm.numPath > 0){
-						tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
-						pm.numPath--;
+				}
+				//Check Top Right
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up + Vector2.right, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
 					}
-					break;
-
-				case 4:
-					if(pm.numStart > 0){
-						tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
-						pm.numStart--;
+				}
+				//Check Top Left
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up + Vector2.left, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
 					}
-					break;
-					
+				}
+				//Check Left
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.left, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
+					}
+				}
+				//Check Right
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.right, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
+					}
+				}
+				//Check Bottom
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
+					}
+				}
+				//Check Bottom Left
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down + Vector2.left, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
+					}
+				}
+				//Check Bottom Right
+				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down + Vector2.right, blockingLayer);
+				if(temp != null){
+					if(temp.CompareTag("StraightPathTile") || temp.CompareTag("Start Tile")){
+						isJunction++;
+					}
+				}
 			}
-			pm.UpdateText();
-			clickable = false;
+
+			if(isJunction < 3){
+				switch(type){
+					case 0://castle
+						if(pm.numCastle > 0){
+							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
+							pm.numCastle--;
+						}
+						break;
+
+					case 1://tower low
+						if(pm.numTower1 > 0){
+							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
+							pm.numTower1--;
+						}
+						break;
+
+					case 2://tower high
+						if(pm.numTower2 > 0){
+							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
+							pm.numTower2--;
+						}
+						break;
+
+					case 3://path
+						if(pm.numPath > 0){
+							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
+							pm.numPath--;
+						}
+						break;
+
+					case 4:
+						if(pm.numStart > 0){
+							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
+							pm.numStart--;
+						}
+						break;
+				}
+				pm.UpdateText();
+				clickable = false;	
+			}
 		}
 	}
-}
+}	

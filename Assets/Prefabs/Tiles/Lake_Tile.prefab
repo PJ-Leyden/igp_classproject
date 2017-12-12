@@ -86,6 +86,9 @@ MonoBehaviour:
   - {fileID: 1790770275885506, guid: 7c93f2279685bcc4d8d3654d1f0f5e4c, type: 2}
   - {fileID: 1555878558868684, guid: 9aa748b4ab0701045ba654716210a70a, type: 2}
   - {fileID: 1555878558868684, guid: d1a80151fb0fbb448b2ad5cc9083d66c, type: 2}
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &212057010897061262
 SpriteRenderer:
   m_ObjectHideFlags: 1
