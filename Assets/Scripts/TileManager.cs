@@ -8,6 +8,7 @@ public class TileManager : MonoBehaviour {
 	public int type = 4;
 	public GameObject[] pTiles;
 	public LayerMask blockingLayer;
+	public LayerMask moveLayer;
 	GameObject tile;
 
 	GameObject gm;
@@ -132,9 +133,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -172,9 +173,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.right, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -212,9 +213,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.left, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -252,9 +253,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -303,9 +304,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -343,9 +344,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.right, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -383,9 +384,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.left, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
@@ -423,9 +424,9 @@ public class TileManager : MonoBehaviour {
 										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down, blockingLayer);//get collider for up space
 										if(nextPos != null){
 											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
-												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);	
-												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
-												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, moveLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, moveLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, moveLayer);
 												if(temp1 != null){
 													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
 														x = true;
