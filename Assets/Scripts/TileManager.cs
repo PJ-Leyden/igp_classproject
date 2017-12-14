@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour {
 
 	public bool clickable = false;
-	public int type = 0;
+	public int type = 4;
 	public GameObject[] pTiles;
 	public LayerMask blockingLayer;
 	GameObject tile;
@@ -31,9 +31,12 @@ public class TileManager : MonoBehaviour {
 
 			//here
 			int isJunction = 0;
-			Collider2D temp;
+			TileManager tileManager;
+			Collider2D nextPos;
+			Collider2D temp1, temp2, temp3;
+			bool x = false, y = false, z = false;
 
-			if(type == 3 || type == 4){
+			/*if(type == 3 || type == 4){
 				//Check Top
 				temp = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);
 				if(temp != null){
@@ -90,7 +93,7 @@ public class TileManager : MonoBehaviour {
 						isJunction++;
 					}
 				}
-			}
+			}*/
 
 			if(isJunction < 3){
 				switch(type){
@@ -119,18 +122,346 @@ public class TileManager : MonoBehaviour {
 						if(pm.numPath > 0){
 							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
 							pm.numPath--;
+							pm.PlacePieces(false);
+							for(int i = 0; i < 4; i++){//check adjacent blocks
+								switch(i){
+									case 0://up
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 1://right
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.right, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 2://left
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.left, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 3://down
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+								}
+							}
 						}
 						break;
 
-					case 4:
+					case 4://start
 						if(pm.numStart > 0){
 							tile = Instantiate(pTiles[type], transform.position, Quaternion.identity) as GameObject;
 							pm.numStart--;
+							pm.PlacePieces(false);
+							for(int i = 0; i < 4; i++){//check adjacent blocks
+								switch(i){
+									case 0://up
+										x = false;
+										y = false;
+										z = false; 
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.up, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 1://right
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.right, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 2://left
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.left, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.up, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+
+									case 3://down
+										x = false;
+										y = false;
+										z = false;
+										nextPos = Physics2D.OverlapPoint((Vector2)transform.position + Vector2.down, blockingLayer);//get collider for up space
+										if(nextPos != null){
+											if(!nextPos.CompareTag("StraightPathTile") && !nextPos.CompareTag("Start Tile")){
+												temp1 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.down, blockingLayer);	
+												temp2 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.right, blockingLayer);
+												temp3 = Physics2D.OverlapPoint((Vector2)nextPos.transform.position + Vector2.left, blockingLayer);
+												if(temp1 != null){
+													if(!temp1.CompareTag("StraightPathTile") && !temp1.CompareTag("Start Tile")){
+														x = true;
+													}
+												}else{
+													x = true;
+												}
+												if(temp2 != null){
+													if(!temp2.CompareTag("StraightPathTile") && !temp2.CompareTag("Start Tile")){
+														y = true;
+													}
+												}else{
+													y = true;
+												}
+												if(temp3 != null){
+													if(!temp3.CompareTag("StraightPathTile") && !temp3.CompareTag("Start Tile")){
+														z = true;
+													}
+												}else{
+													z = true;
+												}
+
+												if(x && y && z && !nextPos.CompareTag("Lake Tile") && !nextPos.CompareTag("Mountain Tile")){
+													tileManager = nextPos.gameObject.GetComponent<TileManager>();
+													tileManager.clickable = true;
+												}
+											}
+										}
+										break;
+								}
+							}
 						}
 						break;
 				}
 				pm.UpdateText();
-				clickable = false;	
+				clickable = false;			
 			}
 		}
 	}

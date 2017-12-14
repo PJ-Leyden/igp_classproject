@@ -16,6 +16,7 @@ public class PieceManager : MonoBehaviour {
 	public int numStart = 1;
 	public Text start;
 
+	public LayerMask blockingLayer;
 	private bool placable = false;
 
 	// Use this for initialization
@@ -28,6 +29,19 @@ public class PieceManager : MonoBehaviour {
 		
 	}
 
+	public void PlacePieces(bool click) {
+		placable = true;
+		if(placable){
+			GameObject board = GameObject.FindGameObjectWithTag("Board");
+			for(int i = 0; i < board.transform.childCount; i++){
+				if(!board.transform.GetChild(i).gameObject.CompareTag("Lake Tile") && !board.transform.GetChild(i).gameObject.CompareTag("Mountain Tile")){
+					TileManager tileManager = board.transform.GetChild(i).gameObject.GetComponent<TileManager>();
+					tileManager.clickable = click;
+				}
+			}
+		}
+	}
+
 	public void PlacePieces(int type) {
 		placable = true;
 		if(placable){
@@ -35,11 +49,30 @@ public class PieceManager : MonoBehaviour {
 			for(int i = 0; i < board.transform.childCount; i++){
 				if(!board.transform.GetChild(i).gameObject.CompareTag("Lake Tile") && !board.transform.GetChild(i).gameObject.CompareTag("Mountain Tile")){
 					TileManager tileManager = board.transform.GetChild(i).gameObject.GetComponent<TileManager>();
-					tileManager.clickable = true;
 					tileManager.type = type;
 				}
 			}
 		}
+	}
+
+	public void ResetBoard() {
+		GameObject board = GameObject.FindGameObjectWithTag("Board");
+		for(int i = 0; i < board.transform.childCount; i++){
+			GameObject temp = board.transform.GetChild(i).gameObject;
+			Collider2D tempC = Physics2D.OverlapPoint((Vector2)temp.transform.position, blockingLayer);
+			if(tempC != null){
+				if(tempC.CompareTag("StraightPathTile") || tempC.CompareTag("Castle") || tempC.CompareTag("Start Tile")){
+					Destroy(tempC.gameObject);
+				}
+			}
+		}
+		numCastle = 1;
+		numTower1 = 2;
+		numTower2 = 1;
+		numPath = 20;
+		numStart = 1;
+		UpdateText();
+		PlacePieces(true);
 	}
 
 	public void UpdateText() {

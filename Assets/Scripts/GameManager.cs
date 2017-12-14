@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,9 +15,12 @@ public class GameManager : MonoBehaviour {
 	GameObject startTile;
 	public GameObject enemy;
 
+	public Button reset;
+
 
 	// Use this for initialization
 	void Awake () {
+		reset.enabled = true;
 		boardScript = GetComponent<BoardManager>();
 		pieceManager = GetComponent<PieceManager>();
 		InitGame();
@@ -28,7 +32,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void PlacePieces() {
-		pieceManager.PlacePieces(0);
+		pieceManager.PlacePieces(true);
 	}
 	
 	// Update is called once per frame
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void beginGame(){
+		reset.enabled = false;
 		startTile = GameObject.FindGameObjectWithTag("Start Tile");
 		InvokeRepeating("spawnEnemy", 1, 1f);
 	}
