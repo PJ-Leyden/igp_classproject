@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4464670133672476}
   - component: {fileID: 212001431579485312}
   - component: {fileID: 114037517123255770}
-  - component: {fileID: 114978699443885090}
   m_Layer: 0
   m_Name: Tower_High_Tile
   m_TagString: HighTower
@@ -115,20 +114,7 @@ MonoBehaviour:
   cannonEnd: {fileID: 4949682167256224}
   bullet: {fileID: 1273302890797202, guid: 54d7350ca913dc74e850e3fbdade590c, type: 2}
   bulletSpeed: 8
-  shootTimer: 1
---- !u!114 &114978699443885090
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1294715871866426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c523ec894fb4df4a858850f6e4722fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numEnemies: 10
-  enemy: {fileID: 0}
+  shootTimer: 0.35
 --- !u!212 &212001431579485312
 SpriteRenderer:
   m_ObjectHideFlags: 1

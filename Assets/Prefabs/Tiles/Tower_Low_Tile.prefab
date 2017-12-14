@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4362930303201958}
   - component: {fileID: 212363133692657414}
   - component: {fileID: 114068984879222138}
-  - component: {fileID: 114977360294617444}
   m_Layer: 0
   m_Name: Tower_Low_Tile
   m_TagString: LowTower
@@ -115,20 +114,7 @@ MonoBehaviour:
   cannonEnd: {fileID: 4497914756734366}
   bullet: {fileID: 1273302890797202, guid: 54d7350ca913dc74e850e3fbdade590c, type: 2}
   bulletSpeed: 16
-  shootTimer: 0.5
---- !u!114 &114977360294617444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151630561316932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c523ec894fb4df4a858850f6e4722fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numEnemies: 10
-  enemy: {fileID: 0}
+  shootTimer: 0.6
 --- !u!212 &212363133692657414
 SpriteRenderer:
   m_ObjectHideFlags: 1
