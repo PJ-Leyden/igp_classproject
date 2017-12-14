@@ -14,19 +14,20 @@ public class EnemyMovementScript : MonoBehaviour {
 
 	bool isMoving;
 	bool isDone;
+	bool foundCastle;
 
 	// Use this for initialization
 	void Start () {
-		nextTile = Physics2D.OverlapPoint(transform.position, blockingLayer);
 		SetNextTile();
 		isMoving = true;
 		isDone = false;
+		foundCastle = false;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!isDone)
+		if (!isDone  && !LevelManager.instance.levelOver)
 		{
 			if (transform.position != nextTile.transform.position)
 			{
@@ -37,9 +38,14 @@ public class EnemyMovementScript : MonoBehaviour {
 			else
 			{
 				isMoving = false;
+				if(foundCastle)
+				{
+					isDone = true;
+					LevelManager.instance.SetGameOver();
+				}
 			}
 
-			if (!isMoving)
+			if (!isMoving && !foundCastle)
 			{
 				SetNextTile();
 				isMoving = true;
@@ -87,8 +93,17 @@ public class EnemyMovementScript : MonoBehaviour {
 
 		//Set to null if not a path tile
 		if (tempTile != null)
+		{
+			if (tempTile.CompareTag(castleTag))
+			{
+				foundCastle = true;
+				Debug.Log("Found");
+			}
+
 			if (!tempTile.CompareTag(straightPathTag) && !tempTile.CompareTag(cornerPathTag) && !tempTile.CompareTag(castleTag))
 				tempTile = null;
+		}
+
 
 
 

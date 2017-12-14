@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4634054789819170}
   - component: {fileID: 212052343245847916}
   - component: {fileID: 61139401120291816}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Straight_Path_Tile
   m_TagString: StraightPathTile
   m_Icon: {fileID: 0}

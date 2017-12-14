@@ -82,8 +82,8 @@ MonoBehaviour:
   type: 0
   pTiles:
   - {fileID: 1255118469361518, guid: 0c232817a243c9e49802d42d27b4d6d8, type: 2}
-  - {fileID: 1602809413778882, guid: ae177eda6a1c64d4e9c28b14d1ae9f3a, type: 2}
-  - {fileID: 1790770275885506, guid: 7c93f2279685bcc4d8d3654d1f0f5e4c, type: 2}
+  - {fileID: 1294715871866426, guid: 05eeeb8a843f1194db55b189ac1c79f9, type: 2}
+  - {fileID: 1151630561316932, guid: e8592492b5921b5488043c3dfdb70424, type: 2}
   - {fileID: 1555878558868684, guid: 9aa748b4ab0701045ba654716210a70a, type: 2}
   - {fileID: 1555878558868684, guid: d1a80151fb0fbb448b2ad5cc9083d66c, type: 2}
   blockingLayer:

@@ -5,22 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
+	public static LevelManager instance = null;
+
 	public int level;
 	public Animator gameCanvas;
+
+	public bool levelOver;
+
+	private void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);
+
+		levelOver = false;
+	}
 
 
 
 	public void SetGameOver()
 	{
 		//Start Game Over Animation
+		levelOver = true;
 		gameCanvas.SetTrigger("GameOver");
+		
 
 	}
 
 	public void SetLevelComplete()
 	{
 		//Start Level Completed Animation
+		levelOver = true;
 		gameCanvas.SetTrigger("LevelCompleted");
+		
 	}
 
 	public void GoToNextLevel()

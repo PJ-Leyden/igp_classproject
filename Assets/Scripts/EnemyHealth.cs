@@ -18,7 +18,9 @@ public class EnemyHealth : MonoBehaviour {
 
 	void EnemyDie()
 	{
+		Debug.Log("Before");
 		ScoreManager.instance.AddScore(pointsPerKill);
+		Debug.Log("After");
 		Destroy(gameObject);
 	}
 }

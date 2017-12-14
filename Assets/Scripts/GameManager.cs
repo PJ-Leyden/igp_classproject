@@ -33,18 +33,20 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (!LevelManager.instance.levelOver)
+			if (numEnemies < 1 && GameObject.FindGameObjectsWithTag("Enemy").Length < 1)
+				LevelManager.instance.SetLevelComplete();
 	}
 
 	public void beginGame(){
 		startTile = GameObject.FindGameObjectWithTag("Start Tile");
-		InvokeRepeating("spawnEnemy", 1, 5f);
+		InvokeRepeating("spawnEnemy", 1, 1f);
 	}
 
 	public void spawnEnemy(){
 		Instantiate(enemy, startTile.transform.position, Quaternion.identity);
 		--numEnemies;
-		if(numEnemies < 1){
+		if(numEnemies < 1 || LevelManager.instance.levelOver){
 			CancelInvoke();
 		}
 	}
