@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour {
 
 	public bool clickable = false;
-	public int type = 4;
+	public int type = 0;
 	public GameObject[] pTiles;
 	public LayerMask blockingLayer;
 	public LayerMask moveLayer;
