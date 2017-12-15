@@ -37,7 +37,8 @@ public class Tower : MonoBehaviour {
 	private void Rotate()
 	{
 		//Debug.Log("Center: " + centerPos);
-		int index = GameObject.FindGameObjectsWithTag("Enemy").Length - 1;
+		//int index = GameObject.FindGameObjectsWithTag("Enemy").Length - 1;
+		int index = 0;
 		Vector2 enemyPos = GameObject.FindGameObjectsWithTag("Enemy")[index].transform.position;
 		Vector2 dirToEnemy = enemyPos - centerPos;
 		Vector2 dirOfCannon = cannonEndPos - centerPos;

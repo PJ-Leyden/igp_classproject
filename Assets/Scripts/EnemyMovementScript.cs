@@ -87,26 +87,32 @@ public class EnemyMovementScript : MonoBehaviour {
 
 	Collider2D GetTile(Vector2 nextPosition)
 	{
-		Collider2D tempTile;
+		Collider2D[] tempTile;
 
-		tempTile = Physics2D.OverlapPoint(nextPosition, blockingLayer);
+		tempTile = Physics2D.OverlapPointAll(nextPosition, blockingLayer);
 
-		//Set to null if not a path tile
-		if (tempTile != null)
+		for (int i = 0; i < tempTile.Length; i++)
 		{
-			if (tempTile.CompareTag(castleTag))
+
+			//Set to null if not a path tile
+			if (tempTile[i] != null)
 			{
-				foundCastle = true;
-				Debug.Log("Found");
+				if (tempTile[i].CompareTag(castleTag))
+				{
+					foundCastle = true;
+					Debug.Log("Found");
+					return tempTile[i];
+				}
+
+				if (tempTile[i].CompareTag(straightPathTag) || tempTile[i].CompareTag(cornerPathTag))
+					return tempTile[i];
 			}
 
-			if (!tempTile.CompareTag(straightPathTag) && !tempTile.CompareTag(cornerPathTag) && !tempTile.CompareTag(castleTag))
-				tempTile = null;
 		}
 
 
 
 
-		return tempTile;
+		return null;
 	}
 }
